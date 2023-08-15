@@ -1,8 +1,11 @@
-const BadgeItem = () => {
+import "./BadgeItem.css"
+
+const BadgeItem = ({badge, name, count }) => {
+    const badgeName = count >= badge.threshold ? `You've unlocked ${name}` : "Locked";
     return (
-        <div className="container">
-            <h3>Badge Tittle</h3>
-            <img src="#" alt="image" />
+        <div className="badge-item">
+            <img src={badge.image} alt={badge.name} />
+            <p>{badgeName}</p>
         </div>
     )
 };
