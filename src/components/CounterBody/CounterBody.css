@@ -1,5 +1,99 @@
+main {
+    min-height: auto;
+    background-color: #cdd7d6;
+    width: 100%;
+    padding: 2rem 0;
+}
+
+.counter-container {
+    padding: 1rem;
+}
+
+.counter-container button {
+    padding: 1rem 1.5rem;
+    margin-left: 10px;
+    margin-bottom: 20px;
+    font-size: clamp(1.2rem, 5vw, 1.5rem);
+    cursor: pointer;
+    border: none;
+    padding: 17px 40px;
+    border-radius: 10px;
+    color: #FFF;
+    transition: all .3s ease;
+}
+
+
+.add-button {
+    background-color: #2791DC;
+    box-shadow: rgb(26, 105, 161) 0px 10px 0px 0px;
+}
+
+.add-button:active {
+    background-color: #2791DC;
+    box-shadow: rgb(26, 106, 161) 0px 0px 0px 0px;
+    transform: translateY(5px);
+    transition: 200ms;
+}
+
+.reset-button {
+    background-color: #FF3856;
+    box-shadow: rgb(201, 46, 70) 0px 10px 0px 0px;
+}
+
+.reset-button:active {
+    background-color: rgb(255, 56, 86);
+    box-shadow: rgb(201, 46, 70) 0px 0px 0px 0px;
+    transform: translateY(5px);
+    transition: 200ms;
+}
+
+.point-display {
+    font-size: 2rem;
+    text-align: center;
+    padding: 0 10px;
+}
+
+.point-display span {
+    color: #8667DD;
+    font-weight: 800;
+}
+
 .badge-list {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: 2fr;
+    gap: 20px;
+}
+
+.badges-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 20px;
+}
+
+.badges-container h2 {
+    font-size: 3rem;
+    margin-top: 0;
+    font-weight: 800;
+}
+
+/* Media queries */
+
+@media screen and (max-width: 375px) {
+    .badge-list {
+    grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media screen and (min-width: 376px) and (max-width: 425px) {
+    .badge-list {
+    grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (min-width: 426px) and (max-width: 768px) {
+    .badge-list {
+    grid-template-columns: repeat(3, 1fr);
+    }
 }

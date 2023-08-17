@@ -1,10 +1,11 @@
 import "./BadgeItem.css"
 
 const BadgeItem = ({badge, name, count }) => {
-    const badgeName = count >= badge.threshold ? `You've unlocked ${name}` : "Locked";
+    const badgeName = count >= badge.threshold ? name : "Locked";
+    const badgeImg = count >= badge.threshold ? badge.image : 'https://i.imgur.com/akfbjHQ.png';
     return (
         <div className="badge-item">
-            <img src={badge.image} alt={badge.name} />
+            <img src={badgeImg} alt={badge.name} />
             <p>{badgeName}</p>
         </div>
     )

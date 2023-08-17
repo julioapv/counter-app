@@ -8,61 +8,61 @@ const badges = [
         id: 1,
         threshold: 10,
         name: 'Dog',
-        image: "#"
+        image: "https://i.imgur.com/4b12RNW.png"
     },
     {
         id: 2,
         threshold: 20,
         name: 'Cat',
-        image: "#"
+        image: "https://i.imgur.com/bJY5ZtU.png"
     },
     {
         id: 3,
         threshold: 30,
         name: 'Fish',
-        image: "#"
+        image: "https://i.imgur.com/0xggotj.png"
     },
     {
         id: 4,
         threshold: 40,
         name: 'Bird',
-        image: "#"
+        image: "https://i.imgur.com/16zyOgE.png"
     },
     {
         id: 5,
         threshold: 50,
         name: 'Hamster',
-        image: "#"
+        image: "https://i.imgur.com/uuL3CGV.png"
     },
     {
         id: 6,
         threshold: 60,
         name: 'Horse',
-        image: "#"
+        image: "https://i.imgur.com/8eYpDfJ.png"
     },
     {
         id: 7,
         threshold: 70,
         name: 'Turtle',
-        image: "#"
+        image: "https://i.imgur.com/FTv2CHa.png"
     },
     {
         id: 8,
         threshold: 80,
         name: 'Lizard',
-        image: "#"
+        image: "https://i.imgur.com/5N8yBLb.png"
     },
     {
         id:9,
         threshold: 90,
         name: 'Frog',
-        image: "#"
+        image: "https://i.imgur.com/0qnu6hy.png"
     },
     {
         id: 10,
         threshold: 100,
         name: 'Dragon',
-        image: "#"
+        image: "https://i.imgur.com/QOeW7Ry.png"
     },
 ];
 
@@ -80,23 +80,29 @@ const CounterBody = () => {
             <div className="counter-container">
                 <button
                 onClick={handleClick}
-                >Click</button>
+                className="add-button"
+                >
+                    Get points
+                </button>
+                
                 <button
                 onClick={resetCounter}
-                >Reset counter</button>
-                <p>You have clicked {count} times</p>
+                className="reset-button"
+                >
+                    Reset points
+                </button>
+                <p className="point-display">You have <span>{count}</span> points</p>
             </div>
             <div className="badges-container">
-                <h2>Badges</h2>
+                <h2>Pets 🐾</h2>
                 <div className="badge-list">
                     {badges.map((badge) => {
                             return <BadgeItem key={badge.id} badge={badge} name={badge.name} image={badge.image} count={count}/>
-                        // if(count >= badge.threshold) {
-                        //     return <BadgeItem key={badge.id} badge={badge} name={badge.name} image={badge.image}/>
-                        // }
                     })}
                 </div>
             </div>
+
+            {count === 100 && alert("Congrats, you've unlocked all pets 😀")}
         </main>
     )
 };
